@@ -1,0 +1,1714 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thiệp Mời Tốt Nghiệp — Huỳnh Ngọc Hoàng Yến</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Montserrat:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --bg-paper: #fbfaf7;
+      --bg-card: #ffffff;
+      --crimson: #b91c47;
+      --crimson-dark: #961437;
+      --ink: #2c2426;
+      --muted: #6e6165;
+      --line: #eadfe3;
+      --shadow-soft: 0 14px 36px rgba(44, 36, 38, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Be Vietnam Pro", "Montserrat", sans-serif;
+      background-color: var(--bg-paper);
+      color: var(--ink);
+      line-height: 1.65;
+      overflow-x: hidden;
+      background-image:
+        radial-gradient(rgba(185, 28, 71, 0.035) 1px, transparent 0),
+        radial-gradient(rgba(44, 36, 38, 0.03) 1px, transparent 0);
+      background-size: 28px 28px;
+      background-position: 0 0, 14px 14px;
+    }
+
+    .font-serif-elegant {
+      font-family: "Cormorant Garamond", Georgia, serif;
+    }
+
+    .font-vibes {
+      font-family: "Great Vibes", cursive;
+    }
+
+    .font-numeral-bold {
+      font-family: "Barlow Condensed", "Montserrat", sans-serif;
+      font-weight: 700;
+      line-height: 1.1;
+      display: inline-block;
+      transform: none;
+    }
+
+    .top-bar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(251, 250, 247, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+      padding: 10px 16px;
+    }
+
+    .top-bar-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .brand-tag {
+      font-family: "Be Vietnam Pro", "Montserrat", sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--crimson);
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .brand-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--crimson);
+      display: inline-block;
+    }
+
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      border: none;
+      cursor: pointer;
+      font-family: "Be Vietnam Pro", sans-serif;
+      font-size: 12.5px;
+      font-weight: 600;
+      border-radius: 999px;
+      padding: 7px 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:active {
+      transform: scale(0.97);
+    }
+
+    .btn-ghost {
+      background: #ffffff;
+      color: var(--ink);
+      border: 1px solid var(--line);
+    }
+
+    .btn-ghost.active {
+      background: #fff0f4;
+      color: var(--crimson);
+      border-color: #f4b6c7;
+    }
+
+    .btn-crimson {
+      background: var(--crimson);
+      color: #ffffff;
+      box-shadow: 0 6px 18px rgba(185, 28, 71, 0.22);
+    }
+
+    .btn-crimson:hover {
+      background: var(--crimson-dark);
+    }
+
+    .page-container {
+      max-width: 540px;
+      margin: 0 auto;
+      padding: 18px 16px 64px;
+    }
+
+    .section-card {
+      background: var(--bg-card);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Hero */
+    .hero-box {
+      position: relative;
+      min-height: 540px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: center;
+      color: #ffffff;
+      background: #23191d;
+      overflow: hidden;
+    }
+
+    .hero-box img.hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.78;
+      transition: transform 0.3s ease-out;
+    }
+
+    .hero-scrim {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(20, 14, 17, 0.52) 0%,
+        rgba(20, 14, 17, 0.22) 45%,
+        rgba(20, 14, 17, 0.68) 100%
+      );
+      pointer-events: none;
+    }
+
+    .bubbles-layer {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .bubble {
+      position: absolute;
+      bottom: -30px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.12));
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      animation: floatUp linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) translateX(0) scale(0.9);
+        opacity: 0;
+      }
+      15% {
+        opacity: 0.75;
+      }
+      85% {
+        opacity: 0.6;
+      }
+      100% {
+        transform: translateY(-620px) translateX(18px) scale(1.08);
+        opacity: 0;
+      }
+    }
+
+    .hero-top {
+      position: relative;
+      z-index: 2;
+      padding: 36px 20px 12px;
+    }
+
+    .hero-title {
+      font-family: "Great Vibes", cursive;
+      font-size: 56px;
+      line-height: 1.05;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.38);
+      font-weight: 400;
+    }
+
+    .hero-bottom {
+      position: relative;
+      z-index: 2;
+      padding: 20px 20px 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .scroll-link {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      opacity: 0.92;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      animation: bobDown 2s ease-in-out infinite;
+    }
+
+    @keyframes bobDown {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(5px);
+      }
+    }
+
+    /* Collage & Calendar Strip */
+    .collage-pad {
+      padding: 20px 18px 24px;
+      background: var(--bg-paper);
+    }
+
+    .collage-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr 1fr;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+
+    .collage-grid img {
+      width: 100%;
+      height: 175px;
+      object-fit: cover;
+      border-radius: 14px;
+      cursor: pointer;
+      box-shadow: 0 6px 16px rgba(44, 36, 38, 0.08);
+    }
+
+    .collage-grid img.center-tall {
+      height: 210px;
+    }
+
+    .banner-photo {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+      border-radius: 16px;
+      cursor: pointer;
+      margin-bottom: 18px;
+    }
+
+    .calendar-strip {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px 12px;
+    }
+
+    .cal-row {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      text-align: center;
+      align-items: center;
+    }
+
+    .cal-dow-row {
+      padding-bottom: 8px;
+      border-bottom: 1px solid #9e6b79;
+      margin-bottom: 8px;
+    }
+
+    .cal-dow {
+      font-family: "Barlow Condensed", "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--crimson);
+      letter-spacing: 0.04em;
+    }
+
+    .cal-day {
+      font-family: "Barlow Condensed", "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      color: var(--ink);
+    }
+
+    .cal-day.active-day {
+      color: var(--crimson);
+      background: #fff0f4;
+      border-radius: 999px;
+      padding: 2px 0;
+    }
+
+    /* Invitation Card */
+    .invite-card {
+      padding: 32px 22px;
+      text-align: center;
+      background: #ffffff;
+    }
+
+    .invite-kicker {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      color: var(--crimson);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .guest-name-display {
+      font-family: "Great Vibes", cursive;
+      font-size: 44px;
+      color: var(--ink);
+      line-height: 1.15;
+      text-align: center;
+      margin: 0 auto 6px;
+      display: inline-block;
+      border-bottom: 1.5px solid var(--crimson);
+      padding: 0 18px 4px;
+    }
+
+    .attend-sub {
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-top: 12px;
+    }
+
+    .graduate-script {
+      font-family: "Great Vibes", cursive;
+      font-size: 50px;
+      color: var(--crimson);
+      line-height: 1.12;
+      text-align: center;
+      margin: 4px 0 12px;
+    }
+
+    .time-line {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 21px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 14px;
+    }
+
+    .date-block {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 12px;
+      max-width: 360px;
+      margin: 0 auto 20px;
+    }
+
+    .date-side {
+      border-top: 1.5px solid var(--crimson);
+      border-bottom: 1.5px solid var(--crimson);
+      padding: 6px 4px;
+      font-family: "Barlow Condensed", "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 19px;
+      letter-spacing: 0.06em;
+      color: var(--ink);
+    }
+
+    .date-day-big {
+      font-family: "Barlow Condensed", "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 54px;
+      line-height: 1;
+      color: var(--crimson);
+      padding: 0 4px;
+    }
+
+    .venue-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .venue-name {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--ink);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 4px;
+    }
+
+    .venue-dash {
+      font-style: normal;
+      display: inline-block;
+    }
+
+    .venue-address {
+      font-size: 12.5px;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .btn-tai-day {
+      position: relative;
+      overflow: hidden;
+      background: var(--crimson);
+      color: #ffffff;
+      border: none;
+      border-radius: 999px;
+      padding: 10px 24px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      box-shadow: 0 8px 20px rgba(185, 28, 71, 0.25);
+      animation: pulseButton 2.4s ease-in-out infinite;
+    }
+
+    .btn-tai-day::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+      animation: sheenSlide 3.2s ease-in-out infinite;
+    }
+
+    @keyframes pulseButton {
+      0%, 100% {
+        transform: translateY(0) scale(1);
+      }
+      50% {
+        transform: translateY(-2px) scale(1.03);
+      }
+    }
+
+    @keyframes sheenSlide {
+      0% {
+        left: -100%;
+      }
+      60%, 100% {
+        left: 140%;
+      }
+    }
+
+    .contact-block {
+      margin-top: 20px;
+      padding-top: 14px;
+      border-top: 1px dashed var(--line);
+    }
+
+    .contact-label {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .contact-phone {
+      font-family: "Barlow Condensed", "Montserrat", sans-serif;
+      font-weight: 600;
+      font-size: 17px;
+      letter-spacing: 0.08em;
+      color: var(--ink);
+    }
+
+    /* Countdown */
+    .countdown-box {
+      padding: 26px 20px;
+      text-align: center;
+    }
+
+    .countdown-title {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 30px;
+      font-weight: 700;
+      color: var(--crimson);
+      margin-bottom: 4px;
+    }
+
+    .countdown-date-str {
+      font-family: "Barlow Condensed", "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .cd-item {
+      background: var(--bg-paper);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px 6px;
+    }
+
+    .cd-num {
+      font-family: "Barlow Condensed", "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 32px;
+      color: var(--crimson);
+      line-height: 1.05;
+    }
+
+    .cd-unit {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+
+    /* Letter & Gallery */
+    .letter-box {
+      padding: 28px 22px;
+      background: #fffdfb;
+    }
+
+    .letter-heading {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--crimson);
+      text-align: center;
+      letter-spacing: 0.08em;
+      margin-bottom: 16px;
+    }
+
+    .letter-body p {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 18px;
+      line-height: 1.65;
+      color: var(--ink);
+      margin-bottom: 12px;
+    }
+
+    .letter-sign {
+      font-family: "Great Vibes", cursive;
+      font-size: 40px;
+      color: var(--crimson);
+      text-align: right;
+      margin-top: 8px;
+    }
+
+    .gallery-box {
+      padding: 18px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .gallery-box img {
+      width: 100%;
+      max-height: 360px;
+      object-fit: cover;
+      border-radius: 16px;
+      cursor: pointer;
+    }
+
+    /* Guestbook & RSVP */
+    .form-section {
+      padding: 26px 20px;
+    }
+
+    .form-title {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--crimson);
+      text-align: center;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .input-field,
+    .textarea-field,
+    .select-field {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1px solid #dcccd1;
+      border-radius: 12px;
+      font-family: "Be Vietnam Pro", sans-serif;
+      font-size: 13.5px;
+      color: var(--ink);
+      background: #ffffff;
+      margin-bottom: 12px;
+    }
+
+    .textarea-field {
+      min-height: 92px;
+      resize: vertical;
+    }
+
+    .rsvp-option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 11px 14px;
+      border: 1px solid #dcccd1;
+      border-radius: 12px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      font-size: 13.5px;
+    }
+
+    .rsvp-option input {
+      accent-color: var(--crimson);
+    }
+
+    .wish-list {
+      margin-top: 18px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .wish-item {
+      background: var(--bg-paper);
+      border-left: 3.5px solid var(--crimson);
+      border-radius: 10px;
+      padding: 11px 14px;
+    }
+
+    .wish-author {
+      font-weight: 700;
+      font-size: 13.5px;
+      color: var(--ink);
+      margin-bottom: 3px;
+    }
+
+    .wish-text {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* Closing Photo with Caption */
+    .closing-hero {
+      position: relative;
+      height: 300px;
+      overflow: hidden;
+    }
+
+    .closing-hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .closing-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 25%, rgba(0, 0, 0, 0.72) 100%);
+      display: flex;
+      align-items: flex-end;
+      padding: 18px;
+    }
+
+    .closing-caption {
+      color: #ffffff;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 17px;
+      line-height: 1.48;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.65);
+    }
+
+    .thank-you-footer {
+      padding: 22px 16px 26px;
+      text-align: center;
+      font-family: "Great Vibes", cursive;
+      font-size: 46px;
+      color: var(--crimson);
+      background: #ffffff;
+    }
+
+    /* Modal & Lightbox */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(20, 14, 17, 0.65);
+      z-index: 60;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal-card {
+      background: #ffffff;
+      border-radius: 20px;
+      max-width: 500px;
+      width: 100%;
+      max-height: 88vh;
+      overflow-y: auto;
+      padding: 22px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+    }
+
+    .modal-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 10px;
+    }
+
+    .editor-group {
+      margin-bottom: 14px;
+    }
+
+    .editor-label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 5px;
+    }
+
+    .photo-edit-item {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 10px;
+      margin-bottom: 10px;
+      background: var(--bg-paper);
+    }
+
+    .photo-edit-row {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-top: 6px;
+    }
+
+    .photo-thumb {
+      width: 52px;
+      height: 52px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      flex-shrink: 0;
+    }
+
+    .status-note {
+      font-size: 11.5px;
+      color: var(--crimson);
+      margin-top: 4px;
+      min-height: 16px;
+    }
+
+    .lightbox-img {
+      max-width: 92vw;
+      max-height: 85vh;
+      border-radius: 14px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    @media (max-width: 480px) {
+      .hero-title {
+        font-size: 46px;
+      }
+      .venue-name {
+        font-size: 16.5px;
+      }
+      .guest-name-display {
+        font-size: 38px;
+      }
+      .graduate-script {
+        font-size: 42px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="top-bar">
+    <div class="top-bar-inner">
+      <span class="brand-tag"><span class="brand-dot"></span>Thư mời</span>
+      <div class="top-actions">
+        <button type="button" id="btn-music" class="btn btn-ghost" onclick="toggleMusic()">
+          ♪ Bật nhạc
+        </button>
+        <button type="button" class="btn btn-crimson" onclick="openEditorModal()">
+          ✎ Tùy chỉnh thiệp
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-container">
+    <!-- 1. HERO -->
+    <section class="section-card reveal">
+      <div class="hero-box">
+        <img id="hero-bg-img" class="hero-bg" src="" alt="Ảnh lễ tốt nghiệp" />
+        <div class="hero-scrim"></div>
+        <div id="bubbles-container" class="bubbles-layer"></div>
+        <div class="hero-top">
+          <h1 class="hero-title">Graduation Ceremony</h1>
+        </div>
+        <div class="hero-bottom">
+          <a href="#section-invitation" class="scroll-link">
+            <span>Cuộn xuống</span>
+            <span>↓</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. COLLAGE & CALENDAR STRIP -->
+    <section class="section-card reveal">
+      <div class="collage-pad">
+        <div class="collage-grid">
+          <img id="collage-1" src="" alt="Khoảnh khắc 1" onclick="openLightboxByKey('collage1')" />
+          <img id="collage-2" class="center-tall" src="" alt="Khoảnh khắc 2" onclick="openLightboxByKey('collage2')" />
+          <img id="collage-3" src="" alt="Khoảnh khắc 3" onclick="openLightboxByKey('collage3')" />
+        </div>
+
+        <img id="banner-photo" class="banner-photo" src="" alt="Khoảnh khắc tốt nghiệp" onclick="openLightboxByKey('banner')" />
+
+        <div class="calendar-strip">
+          <div class="cal-row cal-dow-row">
+            <span class="cal-dow">T2</span>
+            <span class="cal-dow">T3</span>
+            <span class="cal-dow">T4</span>
+            <span class="cal-dow">T5</span>
+            <span class="cal-dow">T6</span>
+            <span class="cal-dow">T7</span>
+            <span class="cal-dow">CN</span>
+          </div>
+          <div id="calendar-days-row" class="cal-row"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. INVITATION CARD -->
+    <section id="section-invitation" class="section-card reveal">
+      <div class="invite-card">
+        <p class="invite-kicker">THÂN MỜI</p>
+        <div>
+          <span id="display-guest-name" class="guest-name-display">hoa lan</span>
+        </div>
+
+        <p class="attend-sub">ĐẾN THAM DỰ LỄ TỐT NGHIỆP</p>
+        <p id="display-graduate-short" class="graduate-script">Hoàng Yến</p>
+
+        <p id="display-time-line" class="time-line">Vào lúc 10:00 – 13:00, Thứ Sáu</p>
+
+        <div class="date-block">
+          <div id="display-month-box" class="date-side">THÁNG 12</div>
+          <div id="display-day-big" class="date-day-big">04</div>
+          <div id="display-year-box" class="date-side">NĂM 2026</div>
+        </div>
+
+        <p class="venue-label">TẠI ĐỊA ĐIỂM:</p>
+        <h2 id="display-venue" class="venue-name">
+          Khu D <span class="venue-dash">-</span> Trường Đại học Công nghệ Sài Gòn
+        </h2>
+        <p id="display-address" class="venue-address">(180 Cao Lỗ, Phường Chánh Hưng, TP Hồ Chí Minh)</p>
+
+        <button type="button" class="btn-tai-day" onclick="scrollToSection('section-rsvp')">
+          ◎ TẠI ĐÂY
+        </button>
+
+        <div class="contact-block">
+          <p class="contact-label">MỌI THÔNG TIN XIN LIÊN HỆ</p>
+          <p id="display-phone" class="contact-phone">0919499633</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. COUNTDOWN -->
+    <section class="section-card reveal">
+      <div class="countdown-box">
+        <h2 class="countdown-title">Đếm Ngược</h2>
+        <p id="countdown-date-label" class="countdown-date-str">04 . 12 . 2026</p>
+        <div class="countdown-grid">
+          <div class="cd-item">
+            <div id="cd-days" class="cd-num">00</div>
+            <div class="cd-unit">Ngày</div>
+          </div>
+          <div class="cd-item">
+            <div id="cd-hours" class="cd-num">00</div>
+            <div class="cd-unit">Giờ</div>
+          </div>
+          <div class="cd-item">
+            <div id="cd-minutes" class="cd-num">00</div>
+            <div class="cd-unit">Phút</div>
+          </div>
+          <div class="cd-item">
+            <div id="cd-seconds" class="cd-num">00</div>
+            <div class="cd-unit">Giây</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. LƯU BÚT -->
+    <section class="section-card reveal">
+      <div class="letter-box">
+        <h2 class="letter-heading">LƯU BÚT</h2>
+        <div class="letter-body">
+          <p>
+            Mỗi chặng đường đều có một điểm dừng để nhìn lại, và lễ tốt nghiệp là cột mốc đánh dấu những nỗ lực,
+            trưởng thành và những ký ức đẹp của một hành trình thanh xuân.
+          </p>
+          <p>
+            Điều quý giá nhất mình nhận được không chỉ là những người mình đã gặp trong ngôi trường này, mà còn là tất cả
+            những ai đã xuất hiện và đồng hành trong quãng thời gian ấy. Có người đi cùng mình rất lâu, có người chỉ lướt qua
+            một đoạn đường nhưng mỗi cuộc gặp đều để lại một dấu ấn.
+          </p>
+          <p>
+            Và trước khi mỗi người lại bước tiếp trên con đường của riêng mình, mình muốn dành ngày đặc biệt này để mời
+            những người mình trân trọng cùng đến chung vui và lưu giữ những khoảnh khắc đáng nhớ. Sự hiện diện của mọi
+            người sẽ là niềm vinh hạnh và là món quà ý nghĩa nhất đối với mình.
+          </p>
+        </div>
+        <div id="letter-signature" class="letter-sign">Hoàng Yến</div>
+      </div>
+    </section>
+
+    <!-- 6. GALLERY -->
+    <section class="section-card reveal">
+      <div class="gallery-box">
+        <img id="gallery-1" src="" alt="Album ảnh 1" onclick="openLightboxByKey('gallery1')" />
+        <img id="gallery-2" src="" alt="Album ảnh 2" onclick="openLightboxByKey('gallery2')" />
+      </div>
+    </section>
+
+    <!-- 7. GUESTBOOK -->
+    <section class="section-card reveal">
+      <div class="form-section">
+        <h2 class="form-title">GỬI LỜI CHÚC</h2>
+        <form id="wish-form" onsubmit="handleWishSubmit(event)">
+          <input
+            id="wish-name"
+            type="text"
+            class="input-field"
+            placeholder="Tên của bạn là?"
+            required
+          />
+          <textarea
+            id="wish-message"
+            class="textarea-field"
+            placeholder="Gửi lời chúc nha"
+            required
+          ></textarea>
+          <button type="submit" class="btn btn-crimson" style="width: 100%; justify-content: center;">
+            ➤ GỬI NGAY
+          </button>
+        </form>
+        <div id="wish-list" class="wish-list"></div>
+      </div>
+    </section>
+
+    <!-- 8. RSVP & CLOSING -->
+    <section id="section-rsvp" class="section-card reveal">
+      <div class="form-section">
+        <h2 class="form-title">XÁC NHẬN THAM DỰ</h2>
+        <form id="rsvp-form" onsubmit="handleRsvpSubmit(event)">
+          <label class="editor-label" for="rsvp-name">Họ tên</label>
+          <input
+            id="rsvp-name"
+            type="text"
+            class="input-field"
+            placeholder="Tên của bạn"
+            required
+          />
+
+          <label class="rsvp-option">
+            <input type="radio" name="rsvp_status" value="Có, tôi sẽ tham dự" checked />
+            <span>Có, tôi sẽ tham dự</span>
+          </label>
+
+          <label class="rsvp-option">
+            <input type="radio" name="rsvp_status" value="Rất tiếc, tôi không thể tham dự" />
+            <span>Rất tiếc, tôi không thể tham dự</span>
+          </label>
+
+          <label class="editor-label" for="rsvp-companion">Bạn tham gia với ai nữa vậy</label>
+          <select id="rsvp-companion" class="select-field">
+            <option value="Chỉ mình tôi">Chỉ mình tôi</option>
+            <option value="Đi cùng 1 người">Đi cùng 1 người</option>
+            <option value="Đi cùng gia đình / nhóm bạn">Đi cùng gia đình / nhóm bạn</option>
+          </select>
+
+          <button type="submit" class="btn btn-crimson" style="width: 100%; justify-content: center;">
+            GỬI XÁC NHẬN
+          </button>
+          <p id="rsvp-feedback" class="status-note" style="text-align: center; margin-top: 10px;"></p>
+        </form>
+      </div>
+
+      <div class="closing-hero">
+        <img id="closing-photo" src="" alt="Lời cảm ơn" onclick="openLightboxByKey('closing')" />
+        <div class="closing-overlay">
+          <p class="closing-caption">
+            Cảm ơn vì đã cùng mình đi qua một chặng đường đáng nhớ.<br />
+            Sự hiện diện của bạn sẽ khiến ngày đặc biệt này trở nên ý nghĩa hơn rất nhiều.<br />
+            Hẹn gặp bạn trong ngày mình tốt nghiệp!
+          </p>
+        </div>
+      </div>
+
+      <div class="thank-you-footer">Thank You!</div>
+    </section>
+  </main>
+
+  <!-- CUSTOMIZATION MODAL -->
+  <div id="editor-modal" class="modal-backdrop" onclick="handleBackdropClick(event, 'editor-modal')">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h3 class="font-serif-elegant" style="font-size: 22px; font-weight: 700; color: var(--crimson);">
+          Tùy chỉnh thiệp mời
+        </h3>
+        <button type="button" class="btn btn-ghost" onclick="closeEditorModal()">✕ Đóng</button>
+      </div>
+
+      <div class="editor-group">
+        <label class="editor-label" for="edit-guest">Tên khách mời</label>
+        <input id="edit-guest" type="text" class="input-field" style="margin-bottom: 0;" />
+      </div>
+
+      <div class="editor-group">
+        <label class="editor-label" for="edit-inviter-full">Tên người mời (đầy đủ)</label>
+        <input id="edit-inviter-full" type="text" class="input-field" style="margin-bottom: 0;" />
+      </div>
+
+      <div class="editor-group">
+        <label class="editor-label" for="edit-inviter-short">Tên hiển thị trên thiệp & chữ ký</label>
+        <input id="edit-inviter-short" type="text" class="input-field" style="margin-bottom: 0;" />
+      </div>
+
+      <div class="editor-group">
+        <label class="editor-label" for="edit-date-iso">Ngày diễn ra lễ tốt nghiệp</label>
+        <input id="edit-date-iso" type="date" class="input-field" style="margin-bottom: 0;" />
+      </div>
+
+      <div class="editor-group">
+        <label class="editor-label" for="edit-time-range">Khung giờ</label>
+        <input id="edit-time-range" type="text" class="input-field" style="margin-bottom: 0;" />
+      </div>
+
+      <div class="editor-group">
+        <label class="editor-label" for="edit-venue">Địa điểm</label>
+        <input id="edit-venue" type="text" class="input-field" style="margin-bottom: 0;" />
+      </div>
+
+      <div class="editor-group">
+        <label class="editor-label" for="edit-address">Địa chỉ chi tiết</label>
+        <input id="edit-address" type="text" class="input-field" style="margin-bottom: 0;" />
+      </div>
+
+      <div class="editor-group">
+        <label class="editor-label" for="edit-phone">Số điện thoại liên hệ</label>
+        <input id="edit-phone" type="text" class="input-field" style="margin-bottom: 0;" />
+      </div>
+
+      <div class="editor-group">
+        <label class="editor-label">Chỉnh sửa hình ảnh trên thiệp (URL hoặc tải ảnh lên)</label>
+        <div id="photo-editors-container"></div>
+        <p id="photo-upload-status" class="status-note"></p>
+      </div>
+
+      <div style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; margin-top: 16px;">
+        <button type="button" class="btn btn-ghost" onclick="resetDefaultConfig()">Khôi phục mặc định</button>
+        <button type="button" class="btn btn-crimson" onclick="saveEditorChanges()">Lưu thay đổi</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox-modal" class="modal-backdrop" onclick="closeLightbox()">
+    <img id="lightbox-img" class="lightbox-img" src="" alt="Xem ảnh lớn" onclick="event.stopPropagation()" />
+  </div>
+
+  <script>
+    function createPlaceholderDataUrl(label, bgHex, accentHex) {
+      const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000">
+        <defs>
+          <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="${bgHex}"/>
+            <stop offset="100%" stop-color="${accentHex}"/>
+          </linearGradient>
+        </defs>
+        <rect width="800" height="1000" fill="url(#g)"/>
+        <circle cx="400" cy="430" r="145" fill="rgba(255,255,255,0.22)"/>
+        <path d="M235 760 C235 615, 565 615, 565 760 Z" fill="rgba(255,255,255,0.22)"/>
+        <text x="400" y="885" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="30" opacity="0.9">${label}</text>
+      </svg>`;
+      return "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(svg);
+    }
+
+    const DEFAULT_PHOTOS = {
+      hero: createPlaceholderDataUrl("Graduation Ceremony", "#3b2830", "#6e384b"),
+      collage1: createPlaceholderDataUrl("Khoảnh Khắc 01", "#573944", "#8c5368"),
+      collage2: createPlaceholderDataUrl("Lễ Tốt Nghiệp", "#38262d", "#7a3950"),
+      collage3: createPlaceholderDataUrl("Khoảnh Khắc 03", "#5e3d49", "#965970"),
+      banner: createPlaceholderDataUrl("Kỷ Niệm Thanh Xuân", "#422c35", "#824258"),
+      gallery1: createPlaceholderDataUrl("Album Ảnh 01", "#4d333d", "#8a4a60"),
+      gallery2: createPlaceholderDataUrl("Album Ảnh 02", "#35232b", "#73354b"),
+      closing: createPlaceholderDataUrl("Hẹn Gặp Bạn", "#3b272f", "#7d3d53")
+    };
+
+    const PHOTO_LABELS = [
+      { key: "hero", label: "Ảnh bìa chính (Hero)" },
+      { key: "collage1", label: "Ảnh ghép bên trái" },
+      { key: "collage2", label: "Ảnh ghép ở giữa" },
+      { key: "collage3", label: "Ảnh ghép bên phải" },
+      { key: "banner", label: "Ảnh ngang trên dải lịch" },
+      { key: "gallery1", label: "Ảnh album 1" },
+      { key: "gallery2", label: "Ảnh album 2" },
+      { key: "closing", label: "Ảnh lời cảm ơn cuối trang" }
+    ];
+
+    const DEFAULT_CONFIG = {
+      guestName: "hoa lan",
+      inviterFullName: "Huỳnh Ngọc Hoàng Yến",
+      inviterShortName: "Hoàng Yến",
+      dateISO: "2026-12-04",
+      timeRange: "10:00 – 13:00",
+      venue: "Khu D - Trường Đại học Công nghệ Sài Gòn",
+      address: "(180 Cao Lỗ, Phường Chánh Hưng, TP Hồ Chí Minh)",
+      phone: "0919499633",
+      photos: { ...DEFAULT_PHOTOS }
+    };
+
+    const STORAGE_KEY_CONFIG = "graduation_invite_config_v1";
+    const STORAGE_KEY_WISHES = "graduation_invite_wishes_v1";
+    let currentConfig = loadConfig();
+    let wishesList = loadWishes();
+    let audioCtx = null;
+    let musicTimer = null;
+    let isMusicPlaying = false;
+
+    function loadConfig() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY_CONFIG);
+        if (!raw) return applyUrlGuestOverride({ ...DEFAULT_CONFIG, photos: { ...DEFAULT_PHOTOS } });
+        const parsed = JSON.parse(raw);
+        const merged = {
+          ...DEFAULT_CONFIG,
+          ...parsed,
+          photos: { ...DEFAULT_PHOTOS, ...(parsed.photos || {}) }
+        };
+        return applyUrlGuestOverride(merged);
+      } catch (e) {
+        return applyUrlGuestOverride({ ...DEFAULT_CONFIG, photos: { ...DEFAULT_PHOTOS } });
+      }
+    }
+
+    function applyUrlGuestOverride(cfg) {
+      try {
+        const params = new URLSearchParams(window.location.search);
+        const guestParam = params.get("guest");
+        if (guestParam && guestParam.trim()) {
+          cfg.guestName = guestParam.trim();
+        }
+      } catch (e) {}
+      return cfg;
+    }
+
+    function saveConfig(cfg) {
+      currentConfig = cfg;
+      try {
+        localStorage.setItem(STORAGE_KEY_CONFIG, JSON.stringify(cfg));
+        return true;
+      } catch (e) {
+        try {
+          const lightCfg = { ...cfg, photos: { ...DEFAULT_PHOTOS } };
+          localStorage.setItem(STORAGE_KEY_CONFIG, JSON.stringify(lightCfg));
+        } catch (e2) {}
+        return false;
+      }
+    }
+
+    function loadWishes() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY_WISHES);
+        if (!raw) return [];
+        const parsed = JSON.parse(raw);
+        return Array.isArray(parsed) ? parsed : [];
+      } catch (e) {
+        return [];
+      }
+    }
+
+    function saveWishes() {
+      try {
+        localStorage.setItem(STORAGE_KEY_WISHES, JSON.stringify(wishesList));
+      } catch (e) {}
+    }
+
+    function getVietnameseWeekday(dateObj) {
+      const days = ["Chủ Nhật", "Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy"];
+      return days[dateObj.getDay()];
+    }
+
+    function formatVenueWithStraightDash(text) {
+      const safe = (text || "").trim();
+      if (!safe.includes("-")) return escapeHtml(safe);
+      const parts = safe.split("-");
+      return parts.map((p) => escapeHtml(p.trim())).join(' <span class="venue-dash">-</span> ');
+    }
+
+    function escapeHtml(str) {
+      return String(str || "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    function renderCalendarStrip(dateObj) {
+      const row = document.getElementById("calendar-days-row");
+      if (!row) return;
+      const dayOfWeek = dateObj.getDay(); // 0=Sun, 1=Mon...
+      const mondayOffset = dayOfWeek === 0 ? -6 : 1 - dayOfWeek;
+      const mondayDate = new Date(dateObj.getFullYear(), dateObj.getMonth(), dateObj.getDate() + mondayOffset);
+
+      let html = "";
+      for (let i = 0; i < 7; i++) {
+        const d = new Date(mondayDate.getFullYear(), mondayDate.getMonth(), mondayDate.getDate() + i);
+        const isTarget =
+          d.getFullYear() === dateObj.getFullYear() &&
+          d.getMonth() === dateObj.getMonth() &&
+          d.getDate() === dateObj.getDate();
+        const dayNumStr = String(d.getDate()).padStart(2, "0");
+        html += `<span class="cal-day ${isTarget ? "active-day" : ""}">${dayNumStr}</span>`;
+      }
+      row.innerHTML = html;
+    }
+
+    function applyPhotoElements() {
+      const p = currentConfig.photos || DEFAULT_PHOTOS;
+      const map = {
+        "hero-bg-img": p.hero || DEFAULT_PHOTOS.hero,
+        "collage-1": p.collage1 || DEFAULT_PHOTOS.collage1,
+        "collage-2": p.collage2 || DEFAULT_PHOTOS.collage2,
+        "collage-3": p.collage3 || DEFAULT_PHOTOS.collage3,
+        "banner-photo": p.banner || DEFAULT_PHOTOS.banner,
+        "gallery-1": p.gallery1 || DEFAULT_PHOTOS.gallery1,
+        "gallery-2": p.gallery2 || DEFAULT_PHOTOS.gallery2,
+        "closing-photo": p.closing || DEFAULT_PHOTOS.closing
+      };
+      Object.entries(map).forEach(([id, src]) => {
+        const el = document.getElementById(id);
+        if (el) el.src = src;
+      });
+    }
+
+    function renderInvitation() {
+      const parts = (currentConfig.dateISO || "2026-12-04").split("-").map(Number);
+      const year = parts[0] || 2026;
+      const month = parts[1] || 12;
+      const day = parts[2] || 4;
+      const dateObj = new Date(year, month - 1, day, 10, 0, 0);
+
+      document.getElementById("display-guest-name").textContent = currentConfig.guestName || "hoa lan";
+      document.getElementById("display-graduate-short").textContent = currentConfig.inviterShortName || "Hoàng Yến";
+      document.getElementById("letter-signature").textContent = currentConfig.inviterShortName || "Hoàng Yến";
+
+      const weekdayStr = getVietnameseWeekday(dateObj);
+      document.getElementById("display-time-line").textContent =
+        `Vào lúc ${currentConfig.timeRange || "10:00 – 13:00"}, ${weekdayStr}`;
+
+      const monthStr = String(month).padStart(2, "0");
+      const dayStr = String(day).padStart(2, "0");
+      document.getElementById("display-month-box").textContent = `THÁNG ${monthStr}`;
+      document.getElementById("display-day-big").textContent = dayStr;
+      document.getElementById("display-year-box").textContent = `NĂM ${year}`;
+
+      document.getElementById("display-venue").innerHTML = formatVenueWithStraightDash(currentConfig.venue);
+      document.getElementById("display-address").textContent = currentConfig.address || "";
+      document.getElementById("display-phone").textContent = currentConfig.phone || "";
+      document.getElementById("countdown-date-label").textContent = `${dayStr} . ${monthStr} . ${year}`;
+
+      document.title = `Thiệp Mời Tốt Nghiệp — ${currentConfig.inviterFullName || "Huỳnh Ngọc Hoàng Yến"}`;
+
+      applyPhotoElements();
+      renderCalendarStrip(dateObj);
+      updateCountdown();
+    }
+
+    function updateCountdown() {
+      const parts = (currentConfig.dateISO || "2026-12-04").split("-").map(Number);
+      const target = new Date(parts[0] || 2026, (parts[1] || 12) - 1, parts[2] || 4, 10, 0, 0).getTime();
+      const now = Date.now();
+      let diff = Math.max(0, Math.floor((target - now) / 1000));
+
+      const days = Math.floor(diff / 86400);
+      diff %= 86400;
+      const hours = Math.floor(diff / 3600);
+      diff %= 3600;
+      const minutes = Math.floor(diff / 60);
+      const seconds = diff % 60;
+
+      document.getElementById("cd-days").textContent = String(days).padStart(2, "0");
+      document.getElementById("cd-hours").textContent = String(hours).padStart(2, "0");
+      document.getElementById("cd-minutes").textContent = String(minutes).padStart(2, "0");
+      document.getElementById("cd-seconds").textContent = String(seconds).padStart(2, "0");
+    }
+
+    function renderWishes() {
+      const listEl = document.getElementById("wish-list");
+      if (!listEl) return;
+      if (!wishesList.length) {
+        listEl.innerHTML = "";
+        return;
+      }
+      listEl.innerHTML = wishesList
+        .map(
+          (w) => `
+          <div class="wish-item">
+            <div class="wish-author">${escapeHtml(w.name)}</div>
+            <div class="wish-text">${escapeHtml(w.message)}</div>
+          </div>
+        `
+        )
+        .join("");
+    }
+
+    function handleWishSubmit(e) {
+      e.preventDefault();
+      const nameInput = document.getElementById("wish-name");
+      const msgInput = document.getElementById("wish-message");
+      const name = nameInput.value.trim();
+      const message = msgInput.value.trim();
+      if (!name || !message) return;
+
+      wishesList.unshift({ name, message, createdAt: Date.now() });
+      saveWishes();
+      renderWishes();
+      nameInput.value = "";
+      msgInput.value = "";
+    }
+
+    function handleRsvpSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById("rsvp-name").value.trim();
+      const statusEl = document.querySelector('input[name="rsvp_status"]:checked');
+      const companion = document.getElementById("rsvp-companion").value;
+      const status = statusEl ? statusEl.value : "Có, tôi sẽ tham dự";
+      const feedback = document.getElementById("rsvp-feedback");
+
+      feedback.textContent = `Đã ghi nhận phản hồi của ${name}: "${status}" (${companion}).`;
+      e.target.reset();
+    }
+
+    function scrollToSection(id) {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }
+
+    function openLightboxByKey(key) {
+      const src = (currentConfig.photos && currentConfig.photos[key]) || DEFAULT_PHOTOS[key];
+      if (!src) return;
+      document.getElementById("lightbox-img").src = src;
+      document.getElementById("lightbox-modal").classList.add("open");
+    }
+
+    function closeLightbox() {
+      document.getElementById("lightbox-modal").classList.remove("open");
+    }
+
+    function handleBackdropClick(e, modalId) {
+      if (e.target && e.target.id === modalId) {
+        document.getElementById(modalId).classList.remove("open");
+      }
+    }
+
+    function buildPhotoEditors(tempPhotos) {
+      const container = document.getElementById("photo-editors-container");
+      container.innerHTML = PHOTO_LABELS.map(
+        (item) => `
+          <div class="photo-edit-item">
+            <div class="editor-label" style="margin-bottom: 4px;">${item.label}</div>
+            <div class="photo-edit-row">
+              <img id="preview-${item.key}" class="photo-thumb" src="${escapeHtml(tempPhotos[item.key] || DEFAULT_PHOTOS[item.key])}" alt="${item.label}" />
+              <div style="flex: 1; display: grid; gap: 6px;">
+                <input
+                  type="text"
+                  class="input-field"
+                  style="margin-bottom: 0; padding: 7px 10px; font-size: 12px;"
+                  placeholder="Dán đường dẫn ảnh (https://...)"
+                  value="${(tempPhotos[item.key] || "").startsWith("data:") ? "" : escapeHtml(tempPhotos[item.key] || "")}"
+                  onchange="onPhotoUrlChange('${item.key}', this.value)"
+                />
+                <input
+                  type="file"
+                  accept="image/*"
+                  style="font-size: 11.5px;"
+                  onchange="onPhotoFileUpload(event, '${item.key}')"
+                />
+              </div>
+            </div>
+          </div>
+        `
+      ).join("");
+    }
+
+    let draftPhotos = {};
+
+    function openEditorModal() {
+      draftPhotos = { ...DEFAULT_PHOTOS, ...(currentConfig.photos || {}) };
+      document.getElementById("edit-guest").value = currentConfig.guestName || "";
+      document.getElementById("edit-inviter-full").value = currentConfig.inviterFullName || "";
+      document.getElementById("edit-inviter-short").value = currentConfig.inviterShortName || "";
+      document.getElementById("edit-date-iso").value = currentConfig.dateISO || "2026-12-04";
+      document.getElementById("edit-time-range").value = currentConfig.timeRange || "10:00 – 13:00";
+      document.getElementById("edit-venue").value = currentConfig.venue || "";
+      document.getElementById("edit-address").value = currentConfig.address || "";
+      document.getElementById("edit-phone").value = currentConfig.phone || "";
+      document.getElementById("photo-upload-status").textContent = "";
+      buildPhotoEditors(draftPhotos);
+      document.getElementById("editor-modal").classList.add("open");
+    }
+
+    function closeEditorModal() {
+      document.getElementById("editor-modal").classList.remove("open");
+    }
+
+    function onPhotoUrlChange(key, val) {
+      const trimmed = (val || "").trim();
+      draftPhotos[key] = trimmed || DEFAULT_PHOTOS[key];
+      const thumb = document.getElementById(`preview-${key}`);
+      if (thumb) thumb.src = draftPhotos[key];
+    }
+
+    function compressImageFile(file, maxWidth = 1000, quality = 0.78) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onerror = () => reject(new Error("Không đọc được tệp ảnh."));
+        reader.onload = () => {
+          const img = new Image();
+          img.onerror = () => reject(new Error("Tệp không phải hình ảnh hợp lệ."));
+          img.onload = () => {
+            let { width, height } = img;
+            if (width > maxWidth) {
+              height = Math.round((height * maxWidth) / width);
+              width = maxWidth;
+            }
+            const canvas = document.createElement("canvas");
+            canvas.width = width;
+            canvas.height = height;
+            const ctx = canvas.getContext("2d");
+            ctx.drawImage(img, 0, 0, width, height);
+            const dataUrl = canvas.toDataURL("image/jpeg", quality);
+            resolve(dataUrl);
+          };
+          img.src = reader.result;
+        };
+        reader.readAsDataURL(file);
+      });
+    }
+
+    async function onPhotoFileUpload(event, key) {
+      const file = event.target.files && event.target.files[0];
+      const statusEl = document.getElementById("photo-upload-status");
+      if (!file) return;
+      statusEl.textContent = "Đang xử lý và tối ưu ảnh...";
+      try {
+        const compressed = await compressImageFile(file);
+        draftPhotos[key] = compressed;
+        const thumb = document.getElementById(`preview-${key}`);
+        if (thumb) thumb.src = compressed;
+        statusEl.textContent = "Đã cập nhật ảnh xem trước (bấm Lưu thay đổi để áp dụng).";
+      } catch (err) {
+        statusEl.textContent = err.message || "Có lỗi khi tải ảnh lên.";
+      }
+    }
+
+    function saveEditorChanges() {
+      const updated = {
+        ...currentConfig,
+        guestName: document.getElementById("edit-guest").value.trim() || "hoa lan",
+        inviterFullName: document.getElementById("edit-inviter-full").value.trim() || "Huỳnh Ngọc Hoàng Yến",
+        inviterShortName: document.getElementById("edit-inviter-short").value.trim() || "Hoàng Yến",
+        dateISO: document.getElementById("edit-date-iso").value || "2026-12-04",
+        timeRange: document.getElementById("edit-time-range").value.trim() || "10:00 – 13:00",
+        venue: document.getElementById("edit-venue").value.trim() || DEFAULT_CONFIG.venue,
+        address: document.getElementById("edit-address").value.trim() || DEFAULT_CONFIG.address,
+        phone: document.getElementById("edit-phone").value.trim() || DEFAULT_CONFIG.phone,
+        photos: { ...draftPhotos }
+      };
+      const savedFull = saveConfig(updated);
+      renderInvitation();
+      closeEditorModal();
+      if (!savedFull) {
+        alert("Thông tin đã được cập nhật, tuy nhiên dung lượng ảnh lớn nên trình duyệt chỉ lưu tạm trong phiên hiện tại.");
+      }
+    }
+
+    function resetDefaultConfig() {
+      draftPhotos = { ...DEFAULT_PHOTOS };
+      currentConfig = { ...DEFAULT_CONFIG, photos: { ...DEFAULT_PHOTOS } };
+      try {
+        localStorage.removeItem(STORAGE_KEY_CONFIG);
+      } catch (e) {}
+      renderInvitation();
+      openEditorModal();
+    }
+
+    function createBubbles() {
+      const box = document.getElementById("bubbles-container");
+      if (!box) return;
+      box.innerHTML = "";
+      for (let i = 0; i < 14; i++) {
+        const b = document.createElement("span");
+        b.className = "bubble";
+        const size = 8 + (i % 5) * 5;
+        b.style.width = `${size}px`;
+        b.style.height = `${size}px`;
+        b.style.left = `${(i * 7.3) % 94}%`;
+        b.style.animationDuration = `${7 + (i % 5) * 2.2}s`;
+        b.style.animationDelay = `${(i % 6) * -1.4}s`;
+        box.appendChild(b);
+      }
+    }
+
+    function initScrollReveal() {
+      const items = document.querySelectorAll(".reveal");
+      if (!("IntersectionObserver" in window)) {
+        items.forEach((el) => el.classList.add("visible"));
+        return;
+      }
+      const obs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              obs.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+      items.forEach((el) => obs.observe(el));
+    }
+
+    function initParallax() {
+      const heroImg = document.getElementById("hero-bg-img");
+      if (!heroImg) return;
+      window.addEventListener(
+        "scroll",
+        () => {
+          const y = Math.min(window.scrollY * 0.14, 55);
+          heroImg.style.transform = `translateY(${y}px) scale(1.04)`;
+        },
+        { passive: true }
+      );
+    }
+
+    // Gentle Music Box Melody via Web Audio API
+    const MELODY_NOTES = [
+      { freq: 523.25, dur: 0.45 }, // C5
+      { freq: 659.25, dur: 0.45 }, // E5
+      { freq: 783.99, dur: 0.45 }, // G5
+      { freq: 987.77, dur: 0.65 }, // B5
+      { freq: 880.00, dur: 0.45 }, // A5
+      { freq: 783.99, dur: 0.45 }, // G5
+      { freq: 659.25, dur: 0.75 }, // E5
+      { freq: 587.33, dur: 0.45 }, // D5
+      { freq: 698.46, dur: 0.45 }, // F5
+      { freq: 880.00, dur: 0.45 }, // A5
+      { freq: 783.99, dur: 0.75 }  // G5
+    ];
+
+    function playMusicBoxNote(freq, duration) {
+      if (!audioCtx) return;
+      const now = audioCtx.currentTime;
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = "sine";
+      osc.frequency.setValueAtTime(freq, now);
+
+      gain.gain.setValueAtTime(0.0001, now);
+      gain.gain.exponentialRampToValueAtTime(0.08, now + 0.025);
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start(now);
+      osc.stop(now + duration + 0.02);
+    }
+
+    function toggleMusic() {
+      const btn = document.getElementById("btn-music");
+      if (!isMusicPlaying) {
+        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+        if (!AudioContextClass) return;
+        if (!audioCtx) audioCtx = new AudioContextClass();
+        if (audioCtx.state === "suspended") audioCtx.resume();
+
+        isMusicPlaying = true;
+        btn.classList.add("active");
+        btn.textContent = "♫ Đang phát nhạc";
+
+        let idx = 0;
+        const step = () => {
+          if (!isMusicPlaying) return;
+          const note = MELODY_NOTES[idx % MELODY_NOTES.length];
+          playMusicBoxNote(note.freq, note.dur);
+          idx++;
+          musicTimer = setTimeout(step, note.dur * 1000 + 80);
+        };
+        step();
+      } else {
+        isMusicPlaying = false;
+        clearTimeout(musicTimer);
+        btn.classList.remove("active");
+        btn.textContent = "♪ Bật nhạc";
+      }
+    }
+
+    createBubbles();
+    initScrollReveal();
+    initParallax();
+    renderInvitation();
+    renderWishes();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
